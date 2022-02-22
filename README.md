@@ -3,7 +3,7 @@ school 42 project // this project is about creating a simple wireframe model of 
 
 ---
 
-![fdf.gif]
+![gif vizualization](fdf.gif)
 
 move: WASD  
 
