@@ -6,7 +6,7 @@
 /*   By: margaritasoldatkina <margaritasoldatkin    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:37:57 by vtyree            #+#    #+#             */
-/*   Updated: 2022/02/24 00:11:29 by margaritaso      ###   ########.fr       */
+/*   Updated: 2022/02/28 04:33:13 by margaritaso      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@ void	map_init(t_map *map)
 {
 	map->angle = ISO;
 	map->z_scale = 1;
-	map->xy_scale = WIN_X / map->width / 1.5;
-	map->x_shift = WIN_X / 3.5;
-	map->y_shift = WIN_Y / 4.8;
+	if (WIN_X / map->width / 2 > WIN_Y / map->height / 2)
+		map->xy_scale = WIN_X / map->width / 1.6;
+	else
+		map->xy_scale = WIN_Y / map->height / 1.6;
+	map->x_shift = 0;
+	map->y_shift = 0;
+	map->alpha = 0;
+	map->beta = 0;
 	return ;
 }
 

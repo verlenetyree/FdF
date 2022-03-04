@@ -6,7 +6,7 @@
 /*   By: margaritasoldatkina <margaritasoldatkin    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 19:53:04 by y margarita       #+#    #+#             */
-/*   Updated: 2022/02/25 07:47:21 by margaritaso      ###   ########.fr       */
+/*   Updated: 2022/02/28 04:33:11 by margaritaso      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,11 @@ void	manage_zoom(int key, t_fdf *params)
 {
 	mlx_destroy_image(params->mlx_ptr, params->mlx_img);
 	if (key == PLUS_KEY)
-	{
 		params->map->xy_scale++;
-		params->map->y_shift += 5;
-		params->map->x_shift -= 10;
-	}
 	else
-	{
 		params->map->xy_scale--;
-		params->map->y_shift -= 5;
-		params->map->x_shift += 10;
-	}
 	if (params->map->xy_scale < 1)
-	{
 		params->map->xy_scale = 1;
-	}
 	draw_map(params->map, params);
 	return ;
 }
@@ -40,25 +30,13 @@ void	manage_move(int key, t_fdf *params)
 {
 	mlx_destroy_image(params->mlx_ptr, params->mlx_img);
 	if (key == W_KEY)
-	{
-		params->map->y_shift += params->map->xy_scale;
-		params->map->x_shift -= params->map->xy_scale;
-	}
+		params->map->y_shift -= params->map->xy_scale / 2;
 	if (key == A_KEY)
-	{
-		params->map->y_shift -= params->map->xy_scale;
-		params->map->x_shift -= params->map->xy_scale;
-	}
+		params->map->x_shift -= params->map->xy_scale / 2;
 	if (key == D_KEY)
-	{
-		params->map->y_shift += params->map->xy_scale;
-		params->map->x_shift += params->map->xy_scale;
-	}
+		params->map->x_shift += params->map->xy_scale / 2;
 	if (key == S_KEY)
-	{
-		params->map->y_shift -= params->map->xy_scale;
-		params->map->x_shift += params->map->xy_scale;
-	}
+		params->map->y_shift += params->map->xy_scale / 2;
 	draw_map(params->map, params);
 	return ;
 }
@@ -78,6 +56,8 @@ void	manage_scale(int key, t_fdf *params)
 void	manage_projection(int key, t_fdf *params)
 {
 	mlx_destroy_image(params->mlx_ptr, params->mlx_img);
+	params->map->alpha = 0;
+	params->map->beta = 0;
 	if (key == ONE_KEY)
 	{
 		params->map->angle = TRUE_ISO;
@@ -100,6 +80,8 @@ int	manage_hook(int key, t_fdf *params)
 		manage_scale(key, params);
 	if (key == ONE_KEY || key == TWO_KEY)
 		manage_projection(key, params);
+	if (key == L_ARROW || key == R_ARROW || key == U_ARROW || key == D_ARROW)
+		manage_rotation(key, params);
 	if (key == ESC_KEY)
 		close_map(params);
 	return (0);

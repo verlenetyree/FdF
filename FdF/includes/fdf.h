@@ -6,7 +6,7 @@
 /*   By: margaritasoldatkina <margaritasoldatkin    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 18:25:05 by vtyree            #+#    #+#             */
-/*   Updated: 2022/02/23 23:58:37 by margaritaso      ###   ########.fr       */
+/*   Updated: 2022/02/28 04:15:15 by margaritaso      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct fdf_map
 	int			z_scale;
 	int			x_shift;
 	int			y_shift;
+	double		alpha;
+	double		beta;
 	double		angle;
 	t_value		**value;
 }				t_map;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_key_macros.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtyree <vtyree@student.42.fr>              +#+  +:+       +#+        */
+/*   By: margaritasoldatkina <margaritasoldatkin    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:59:13 by margaritaso       #+#    #+#             */
-/*   Updated: 2022/02/23 19:15:38 by vtyree           ###   ########.fr       */
+/*   Updated: 2022/02/28 04:26:59 by margaritaso      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,17 @@
 # define ONE_KEY 	18
 # define TWO_KEY 	19
 
+# define L_ARROW	123
+# define R_ARROW	124
+# define D_ARROW	125
+# define U_ARROW	126
+
 # define ESC_KEY 	53
 # define SPACE_KEY 	49
 
 # define ON_DESTROY	17
 
+void	manage_rotation(int key, t_fdf *params);
+void	map_rotation(int *x, int *y, int *z, t_map *map);
 
 #endif

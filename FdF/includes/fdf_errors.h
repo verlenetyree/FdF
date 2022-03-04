@@ -6,7 +6,7 @@
 /*   By: vtyree <vtyree@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 17:16:28 by vtyree            #+#    #+#             */
-/*   Updated: 2022/02/23 14:04:09 by vtyree           ###   ########.fr       */
+/*   Updated: 2022/03/03 11:37:40 by vtyree           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <errno.h>
 # include <stdio.h>
 
-# define WRONG_ARGS "Error: Only one argument is expected."
-# define WRONG_EXT "Error: Wrong extension. *.fdf file is expected."
+# define WRONG_ARGS "Error: Only one argument is expected"
+# define WRONG_EXT "Error: Wrong extension. *.fdf file is expected"
 # define ERROR_OPEN "Error open()"
 # define ERROR_MALLOC "Error malloc()"
 
